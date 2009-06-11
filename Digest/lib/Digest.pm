@@ -1,5 +1,11 @@
 module Digest;
 
+sub md5(Str $text) { digest($text,"md5") }
+sub sha1(Str $text) { digest($text,"sha1") }
+sub sha256(Str $text) { digest($text,"sha256") }
+sub sha512(Str $text) { digest($text,"sha512") }
+sub ripemd160(Str $text) { digest($text,"ripemd160") }
+
 # Known digests: md5, sha1, sha256, sha512, ripemd160
 sub digest(Str $text, Str $algo is copy = 'md5') is export {
 	$algo = uc $algo;
